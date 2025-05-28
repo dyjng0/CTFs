@@ -1,8 +1,6 @@
 from pwn import remote, xor
 
-# HOST = "challenge.nahamcon.com"
 HOST = "localhost"
-# PORT = "32377"
 PORT = "1337"
 
 r = remote(HOST, PORT)

@@ -1,7 +1,9 @@
-from pwn import *
+from pwn import remote, xor
 
-HOST = "challenge.nahamcon.com"
-PORT = "32377"
+# HOST = "challenge.nahamcon.com"
+HOST = "localhost"
+# PORT = "32377"
+PORT = "1337"
 
 r = remote(HOST, PORT)
 
@@ -17,10 +19,7 @@ print(f"Sending byte string of length {flag_length}...")
 r.sendline(byte_str)
 
 r.recvuntil(b"Encrypted: ")
-encrypted_bytes = bytes.fromhex(r.recvline().strip().decode())
-print(f"Encrypted Byte String: {encrypted_bytes}")
-
-key = xor(byte_str, encrypted_bytes)
+key = bytes.fromhex(r.recvline().strip().decode())
 print(f"Flag Key: {key}")
 r.close()
 

@@ -157,7 +157,7 @@ def forgot_password():
         username = request.form['username']
         reset_token = request.form['reset_token']
         new_password = request.form['new_password']
-        confirm_password = request.form['b']
+        confirm_password = request.form['confirm_password']
 
         if new_password != confirm_password:
             flash("Passwords do not match.", "error")
@@ -172,7 +172,7 @@ def forgot_password():
             token = get_reset_token_for_user(username)
             if token and token[0] == reset_token:
                 update_password(username, new_password)
-                flash(f"Password reset successfully.", "success")
+                flash("Password reset successfully.", "success")
                 return redirect(url_for('login'))
             else:
                 flash("Invalid reset token for user.", "error")
@@ -181,7 +181,7 @@ def forgot_password():
             token = get_reset_token_for_user(username)
             if token and token[0] == reset_token:
                 update_password(request.form['username'], new_password)
-                flash(f"Password reset successfully.", "success")
+                flash("Password reset successfully.", "success")
                 return redirect(url_for('login'))
             else:
                 flash("Invalid reset token for user.", "error")

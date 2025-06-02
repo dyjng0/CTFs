@@ -15,7 +15,6 @@ for i in range(0, len(flag), 2):
     shifted_flag += shifted_bigram
 print(shifted_flag)
 # jlT84CKOAhxvdrPQWlWT6cEVD78z5QREBINSsU50FMhv662W
-# jl T8 4C KO Ah xv dr PQ Wl WT 6c EV D7 8z 5Q RE BI NS sU 50 FM hv 66 2W
 # Get solving!
 # ...it's not injective you say? Ok fine, I'll give you a hint.
 not_the_flag = "mCtRNrPw_Ay9mytTR7ZpLJtrflqLS0BLpthi~2LgUY9cii7w"

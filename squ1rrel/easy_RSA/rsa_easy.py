@@ -4,7 +4,7 @@ from sympy import nextprime, mod_inverse
 
 def gen_primes(bit_length, diff=2**525):
     p = nextprime(random.getrandbits(bit_length))
-    q = nextprime(p + random.randint(diff//2, diff))
+    q = nextprime(p + random.randint(diff // 2, diff))
     return p, q
 
 
@@ -21,7 +21,7 @@ def gen_keys(bit_length=1024):
 
 def encrypt(message, public_key):
     n, e = public_key
-    message_int = int.from_bytes(message.encode(), 'big')
+    message_int = int.from_bytes(message.encode(), "big")
     ciphertext = pow(message_int, e, n)
     return ciphertext
 

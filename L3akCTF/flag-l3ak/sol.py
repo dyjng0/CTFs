@@ -28,7 +28,7 @@ def check_in_flag_post(substring):
     return False
 
 
-print("=== Extracting Flag ===")
+print("=== EXTRACTING FLAG ===")
 while len(flag) < FLAG_LENGTH:
     print(f"\nCurrent flag: {flag} (length: {len(flag)} of {FLAG_LENGTH})")
 

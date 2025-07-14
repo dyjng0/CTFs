@@ -20,6 +20,7 @@ def factorN():
                 q = n // testPrime
                 r = rTest
                 return p, q, r
+    return 0, 0, 0
 
 p, q, r = factorN()
 

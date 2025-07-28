@@ -1,9 +1,9 @@
 import requests
 import string
 
-URL = "http://34.134.162.213:17000/api/search"
+URL = "http://localhost:3000/api/search"
+LENGTH = 17
 flag = "L3AK{"
-
 
 def search_query(query):
     try:
@@ -27,8 +27,8 @@ def check_in_flag_post(substring):
 
 
 print("=== EXTRACTING FLAG ===")
-while len(flag) < 24:
-    print(f"\nCurrent flag: {flag} (length: {len(flag)} of 24)")
+while len(flag) < LENGTH:
+    print(f"\nCurrent flag: {flag} (length: {len(flag)} of {LENGTH})")
 
     test = flag[-2:]
     print(f"Testing {test} + ?")

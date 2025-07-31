@@ -1,12 +1,6 @@
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad
 import hashlib
-from pwn import *
-
-HOST = "socket.cryptohack.org"
-PORT = 13371
-
-remote(HOST, PORT)
 
 
 def is_pkcs7_padded(message):

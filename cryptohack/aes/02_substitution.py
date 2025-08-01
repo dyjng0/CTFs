@@ -45,11 +45,10 @@ state = [
 
 
 def sub_bytes(s, sbox=s_box):
-    plaintext = ""
-    for row in s:
-        for entry in row:
-            plaintext += chr(sbox[entry])
-    return plaintext
+    return [[sbox[sss] for sss in ss] for ss in s]
 
-print(sub_bytes(state, sbox=inv_s_box))
+def matrix2bytes(matrix):
+    return bytes(sum(matrix, []))
+
+print(matrix2bytes(sub_bytes(state, sbox=inv_s_box)))
 

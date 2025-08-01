@@ -12,12 +12,13 @@ round_key = [
     [253, 48, 187, 78],
 ]
 
+
+def matrix2bytes(matrix):
+    return bytes(sum(matrix, []))
+
+
 def add_round_key(s, k):
-    plaintext = ""
-    for i in range(len(state)):
-        for j in range(len(state[i])):
-            plaintext += chr(state[i][j] ^ round_key[i][j])
-    return plaintext
+    return [[sss ^ kkk for sss, kkk in zip(ss, kk)] for ss, kk in zip(s, k)]
 
-print(add_round_key(state, round_key))
 
+print(matrix2bytes(add_round_key(state, round_key)))

@@ -11,7 +11,7 @@ def inv_shift_rows(s):
 
 
 # learned from http://cs.ucsb.edu/~koc/cs178/projects/JT/aes.c
-xtime = lambda a: (((a << 1) ^ 0x1B) & 0xFF) if (a & 0x80) else (a << 1)
+xtime = lambda a: (((a << 1) ^ 0x1B) & 0xFF) if (a & 0x80) else (a << 1)  # noqa: E731
 
 
 def mix_single_column(a):
@@ -56,4 +56,3 @@ state = [
 inv_mix_columns(state)
 inv_shift_rows(state)
 print(matrix2bytes(state))
-

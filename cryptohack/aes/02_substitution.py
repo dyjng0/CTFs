@@ -47,8 +47,14 @@ state = [
 def sub_bytes(s, sbox=s_box):
     return [[sbox[sss] for sss in ss] for ss in s]
 
+
+def inv_sub_bytes(s):
+    return [[inv_s_box[sss] for sss in ss] for ss in s]
+
+
 def matrix2bytes(matrix):
     return bytes(sum(matrix, []))
+
 
 print(matrix2bytes(sub_bytes(state, sbox=inv_s_box)))
 

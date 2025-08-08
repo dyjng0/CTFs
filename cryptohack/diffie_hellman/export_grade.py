@@ -1,6 +1,7 @@
 from pwn import remote
 from json import dumps
 from decrypt import decrypt_flag
+from sage.all import GF, discrete_log
 
 HOST = "socket.cryptohack.org"
 PORT = 13379
@@ -17,8 +18,14 @@ def force_DH64():
     results = r.recvall()
     return results
 
-a = 1343962867716518639
-b = 1423872905964669795
+modulus = 0xde26ab651b92a129
+F = GF(modulus)
+g = F(0x2)
+A = F(0xbd1d620e0990e4af)
+B = F(0x67d8c1bcd4232375)
+
+a = discrete_log(A, g)
+b = discrete_log(B, g)
 g = 0x2
 p = 0xde26ab651b92a129
 shared_secret = pow(g, a * b, p)

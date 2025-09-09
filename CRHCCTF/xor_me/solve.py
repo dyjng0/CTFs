@@ -11,4 +11,5 @@ def xor_it(ct, tag):
     return key.encode()
 
 key = xor_it(ct, tag)
+print(key)
 print(xor(ct, key))

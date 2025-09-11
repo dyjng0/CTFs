@@ -5,7 +5,7 @@ def checksum(msg):
         c = c % 128
     return c
 
-flag = "dukeCTF{why_15_7here_50_much_m47h}"
+flag = "REDACTED"
 
 my_checksums = []
 for i in range(len(flag)):

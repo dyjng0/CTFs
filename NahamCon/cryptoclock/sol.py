@@ -1,6 +1,6 @@
 from pwn import remote, xor
 
-HOST = "localhost"
+HOST = "10.197.112.91"
 PORT = "1337"
 
 r = remote(HOST, PORT)

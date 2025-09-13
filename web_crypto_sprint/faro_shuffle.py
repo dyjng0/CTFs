@@ -26,7 +26,7 @@ for i in range(shuffles):
     enc = perfect_shuffle(enc)
 
 print("Encrypted:", enc, "after", shuffles, "shuffles")
-# ld1ukk3e_C9T4Fm{8dl01_nyg0?u}_
+:# ld1ukk3e_C9T4Fm{8dl01_nyg0?u}_
 
 
 # Decryption

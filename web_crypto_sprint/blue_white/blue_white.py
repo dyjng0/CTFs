@@ -21,7 +21,7 @@ for word in ct.split():
         binary += "0"
     else:
         binary += "1"
-
+print(binary)
 def binary_to_ascii(binary_str):
     chars = [binary_str[i:i+8] for i in range(0, len(binary_str), 8)]
     text = ''.join(chr(int(c, 2)) for c in chars)

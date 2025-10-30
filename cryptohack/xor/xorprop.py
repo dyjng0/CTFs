@@ -13,6 +13,13 @@
 from pwn import xor
 key1 = bytes.fromhex('a6c8b6733c9b22de7bc0253266a3867df55acde8635e19c73313')
 xor2 = bytes.fromhex('c1545756687e7573db23aa1c3452a098b71a7fbf0fddddde5fc1')
-flag = bytes.fromhex('04ee9855208a2cd59091d04767ae47963170d1660df7f56f5faf')
-flag = xor(flag, key1, xor2)
+flagxor = bytes.fromhex('04ee9855208a2cd59091d04767ae47963170d1660df7f56f5faf')
+xor3 = bytes.fromhex('c1545756687e7573db23aa1c3452a098b71a7fbf0fddddde5fc1')
+
+key2 = xor(xor2, key1)
+key3 = xor(xor3, key2)
+flag = xor(flagxor, key1, key2, key3)
 print(flag)
+
+# flag = xor(flagxor, key1, xor2)
+# print(flag)

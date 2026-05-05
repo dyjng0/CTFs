@@ -1,0 +1,25 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Sat Feb 21 14:56:37 2026
+Invocation: foremost -i THJCC_I_use_arch_btw.jpg 
+Output directory: /home/dyjng/Projects/CTFs/thjcc2026/output
+Configuration file: /etc/foremost.conf
+------------------------------------------------------------------
+File: THJCC_I_use_arch_btw.jpg
+Start: Sat Feb 21 14:56:37 2026
+Length: 81 KB (82963 bytes)
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+0:	00000000.jpg 	      74 KB 	          0 	 
+1:	00000149.zip 	       6 KB 	      76507 	 
+Finish: Sat Feb 21 14:56:37 2026
+
+2 FILES EXTRACTED
+	
+jpg:= 1
+zip:= 1
+------------------------------------------------------------------
+
+Foremost finished at Sat Feb 21 14:56:37 2026
